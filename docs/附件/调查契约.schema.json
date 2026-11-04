@@ -1,0 +1,1544 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gulimall-rca:investigation-contract:0.1",
+  "title": "目标一调查契约结构包",
+  "description": "设计0.1。端点引用各$defs；根对象仅供契约文档包装。授权、归属、迁移、引用与因果需业务校验。",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "CreateInvestigationRequest"
+        },
+        "payload": {
+          "$ref": "#/$defs/CreateInvestigationRequest"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "CancelInvestigationRequest"
+        },
+        "payload": {
+          "$ref": "#/$defs/CancelInvestigationRequest"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "SelectIncidentReportRequest"
+        },
+        "payload": {
+          "$ref": "#/$defs/SelectIncidentReportRequest"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "RunSnapshot"
+        },
+        "payload": {
+          "$ref": "#/$defs/RunSnapshot"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "TaskContract"
+        },
+        "payload": {
+          "$ref": "#/$defs/TaskContract"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "EvidenceMetadata"
+        },
+        "payload": {
+          "$ref": "#/$defs/EvidenceMetadata"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "FindingProposal"
+        },
+        "payload": {
+          "$ref": "#/$defs/FindingProposal"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "ResourceRef"
+        },
+        "payload": {
+          "$ref": "#/$defs/ResourceRef"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "IncidentSnapshot"
+        },
+        "payload": {
+          "$ref": "#/$defs/IncidentSnapshot"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "TaskExecutionResult"
+        },
+        "payload": {
+          "$ref": "#/$defs/TaskExecutionResult"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "ReviewResultProposal"
+        },
+        "payload": {
+          "$ref": "#/$defs/ReviewResultProposal"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contractName",
+        "payload"
+      ],
+      "properties": {
+        "contractName": {
+          "const": "ReviewResultSnapshot"
+        },
+        "payload": {
+          "$ref": "#/$defs/ReviewResultSnapshot"
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "RequestedScope": {
+      "additionalProperties": false,
+      "properties": {
+        "environmentId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Environmentid",
+          "type": "string"
+        },
+        "serviceIds": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9-]{1,63}$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Serviceids",
+          "type": "array"
+        },
+        "timeWindow": {
+          "$ref": "#/$defs/TimeWindow"
+        }
+      },
+      "required": [
+        "environmentId",
+        "serviceIds",
+        "timeWindow"
+      ],
+      "title": "RequestedScope",
+      "type": "object"
+    },
+    "TimeWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "format": "date-time",
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "format": "date-time",
+          "title": "End",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "TimeWindow",
+      "type": "object"
+    },
+    "CreateInvestigationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "objectiveZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Objectivezh",
+          "type": "string"
+        },
+        "requestedScope": {
+          "$ref": "#/$defs/RequestedScope"
+        },
+        "investigationProfileId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Investigationprofileid",
+          "type": "string"
+        },
+        "expectedIncidentVersion": {
+          "minimum": 0,
+          "title": "Expectedincidentversion",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "objectiveZh",
+        "requestedScope",
+        "investigationProfileId",
+        "expectedIncidentVersion"
+      ],
+      "title": "CreateInvestigationRequest",
+      "type": "object"
+    },
+    "CancelInvestigationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "expectedStateVersion": {
+          "minimum": 0,
+          "title": "Expectedstateversion",
+          "type": "integer"
+        },
+        "reasonZh": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Reasonzh",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expectedStateVersion",
+        "reasonZh"
+      ],
+      "title": "CancelInvestigationRequest",
+      "type": "object"
+    },
+    "SelectIncidentReportRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "reportId": {
+          "format": "uuid4",
+          "title": "Reportid",
+          "type": "string"
+        },
+        "expectedIncidentVersion": {
+          "minimum": 0,
+          "title": "Expectedincidentversion",
+          "type": "integer"
+        },
+        "reasonZh": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Reasonzh",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reportId",
+        "expectedIncidentVersion",
+        "reasonZh"
+      ],
+      "title": "SelectIncidentReportRequest",
+      "type": "object"
+    },
+    "RunSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "runId": {
+          "format": "uuid4",
+          "title": "Runid",
+          "type": "string"
+        },
+        "displayId": {
+          "maxLength": 160,
+          "minLength": 10,
+          "pattern": "^[^-]+-[^-]+-[^-]+-[0-9]{8}-[0-9]{6,}$",
+          "title": "Displayid",
+          "type": "string"
+        },
+        "incidentId": {
+          "format": "uuid4",
+          "title": "Incidentid",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "QUEUED",
+            "RUNNING",
+            "CANCELLING",
+            "COMPLETED",
+            "FAILED",
+            "CANCELLED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "phase": {
+          "enum": [
+            "NONE",
+            "PLANNING",
+            "EXECUTING",
+            "REVIEWING",
+            "FINALIZING"
+          ],
+          "title": "Phase",
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "NOT_EVALUATED",
+            "CANDIDATE_ACCEPTED",
+            "INCONCLUSIVE",
+            "NO_REPRODUCIBLE_ANOMALY"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "stateVersion": {
+          "minimum": 0,
+          "title": "Stateversion",
+          "type": "integer"
+        },
+        "currentPlanRevision": {
+          "minimum": 0,
+          "title": "Currentplanrevision",
+          "type": "integer"
+        },
+        "executionEpoch": {
+          "minimum": 0,
+          "title": "Executionepoch",
+          "type": "integer"
+        },
+        "scope": {
+          "$ref": "#/$defs/RequestedScope"
+        },
+        "configurationVersion": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Configurationversion",
+          "type": "string"
+        },
+        "initiatorAccountId": {
+          "format": "uuid4",
+          "title": "Initiatoraccountid",
+          "type": "string"
+        },
+        "executorAccountId": {
+          "anyOf": [
+            {
+              "format": "uuid4",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Executoraccountid"
+        },
+        "startedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Startedat"
+        },
+        "finishedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Finishedat"
+        },
+        "terminationReason": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Terminationreason"
+        },
+        "hasUnresolvedExternalCalls": {
+          "title": "Hasunresolvedexternalcalls",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "runId",
+        "displayId",
+        "incidentId",
+        "status",
+        "phase",
+        "outcome",
+        "stateVersion",
+        "currentPlanRevision",
+        "executionEpoch",
+        "scope",
+        "configurationVersion",
+        "initiatorAccountId",
+        "executorAccountId",
+        "startedAt",
+        "finishedAt",
+        "terminationReason",
+        "hasUnresolvedExternalCalls"
+      ],
+      "title": "RunSnapshot",
+      "type": "object"
+    },
+    "TaskDependency": {
+      "additionalProperties": false,
+      "properties": {
+        "upstreamTaskId": {
+          "format": "uuid4",
+          "title": "Upstreamtaskid",
+          "type": "string"
+        },
+        "condition": {
+          "enum": [
+            "EXECUTION_TERMINATED",
+            "EXECUTION_SUCCEEDED",
+            "REQUIRED_EVIDENCE_READY"
+          ],
+          "title": "Condition",
+          "type": "string"
+        },
+        "requiredEvidenceZh": {
+          "items": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "pattern": "[\\u4e00-\\u9fff]",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Requiredevidencezh",
+          "type": "array"
+        }
+      },
+      "required": [
+        "upstreamTaskId",
+        "condition",
+        "requiredEvidenceZh"
+      ],
+      "title": "TaskDependency",
+      "type": "object"
+    },
+    "TaskContract": {
+      "additionalProperties": false,
+      "properties": {
+        "taskId": {
+          "format": "uuid4",
+          "title": "Taskid",
+          "type": "string"
+        },
+        "runId": {
+          "format": "uuid4",
+          "title": "Runid",
+          "type": "string"
+        },
+        "parentTaskId": {
+          "anyOf": [
+            {
+              "format": "uuid4",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Parenttaskid"
+        },
+        "createdPlanRevision": {
+          "minimum": 1,
+          "title": "Createdplanrevision",
+          "type": "integer"
+        },
+        "scopeVersion": {
+          "minimum": 1,
+          "title": "Scopeversion",
+          "type": "integer"
+        },
+        "objectiveZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Objectivezh",
+          "type": "string"
+        },
+        "requiredEvidenceZh": {
+          "items": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "pattern": "[\\u4e00-\\u9fff]",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Requiredevidencezh",
+          "type": "array"
+        },
+        "allowedToolCapabilities": {
+          "items": {
+            "enum": [
+              "metrics.query",
+              "logs.search",
+              "trace.lookup",
+              "changes.list",
+              "evidence.read",
+              "topology.resolve"
+            ],
+            "type": "string"
+          },
+          "maxItems": 6,
+          "minItems": 1,
+          "title": "Allowedtoolcapabilities",
+          "type": "array"
+        },
+        "deadline": {
+          "format": "date-time",
+          "title": "Deadline",
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/TaskDependency"
+          },
+          "maxItems": 20,
+          "title": "Dependencies",
+          "type": "array"
+        }
+      },
+      "required": [
+        "taskId",
+        "runId",
+        "parentTaskId",
+        "createdPlanRevision",
+        "scopeVersion",
+        "objectiveZh",
+        "requiredEvidenceZh",
+        "allowedToolCapabilities",
+        "deadline",
+        "dependencies"
+      ],
+      "title": "TaskContract",
+      "type": "object"
+    },
+    "EvidenceMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "evidenceId": {
+          "format": "uuid4",
+          "title": "Evidenceid",
+          "type": "string"
+        },
+        "runId": {
+          "format": "uuid4",
+          "title": "Runid",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PENDING",
+            "READY",
+            "UNAVAILABLE",
+            "EXPIRED",
+            "INVALID",
+            "DELETED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "completeness": {
+          "enum": [
+            "COMPLETE",
+            "TRUNCATED",
+            "SAMPLED",
+            "UNKNOWN"
+          ],
+          "title": "Completeness",
+          "type": "string"
+        },
+        "sourceType": {
+          "enum": [
+            "METRICS",
+            "LOGS",
+            "TRACE",
+            "CHANGE",
+            "TOPOLOGY"
+          ],
+          "title": "Sourcetype",
+          "type": "string"
+        },
+        "sourceSystemId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Sourcesystemid",
+          "type": "string"
+        },
+        "serviceId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Serviceid",
+          "type": "string"
+        },
+        "timeWindow": {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        "capturedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Capturedat"
+        },
+        "contentSha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Contentsha256"
+        },
+        "contentSize": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Contentsize"
+        }
+      },
+      "required": [
+        "evidenceId",
+        "runId",
+        "status",
+        "completeness",
+        "sourceType",
+        "sourceSystemId",
+        "serviceId",
+        "timeWindow",
+        "capturedAt",
+        "contentSha256",
+        "contentSize"
+      ],
+      "title": "EvidenceMetadata",
+      "type": "object"
+    },
+    "ChangeLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "CHANGE_RECORD",
+          "title": "Kind",
+          "type": "string"
+        },
+        "sourceRecordId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Sourcerecordid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "sourceRecordId"
+      ],
+      "title": "ChangeLocator",
+      "type": "object"
+    },
+    "EvidenceCitation": {
+      "additionalProperties": false,
+      "properties": {
+        "evidenceId": {
+          "format": "uuid4",
+          "title": "Evidenceid",
+          "type": "string"
+        },
+        "locator": {
+          "discriminator": {
+            "mapping": {
+              "CHANGE_RECORD": "#/$defs/ChangeLocator",
+              "LOG_RECORDS": "#/$defs/LogLocator",
+              "METRIC_RANGE": "#/$defs/MetricLocator",
+              "TRACE_SPAN": "#/$defs/TraceLocator"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/LogLocator"
+            },
+            {
+              "$ref": "#/$defs/TraceLocator"
+            },
+            {
+              "$ref": "#/$defs/MetricLocator"
+            },
+            {
+              "$ref": "#/$defs/ChangeLocator"
+            }
+          ],
+          "title": "Locator"
+        },
+        "supportedClaimId": {
+          "anyOf": [
+            {
+              "format": "uuid4",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Supportedclaimid"
+        }
+      },
+      "required": [
+        "evidenceId",
+        "locator",
+        "supportedClaimId"
+      ],
+      "title": "EvidenceCitation",
+      "type": "object"
+    },
+    "LogLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "LOG_RECORDS",
+          "title": "Kind",
+          "type": "string"
+        },
+        "snapshotRecordIds": {
+          "items": {
+            "format": "uuid4",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Snapshotrecordids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "snapshotRecordIds"
+      ],
+      "title": "LogLocator",
+      "type": "object"
+    },
+    "MetricLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "METRIC_RANGE",
+          "title": "Kind",
+          "type": "string"
+        },
+        "seriesRef": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Seriesref",
+          "type": "string"
+        },
+        "timeWindow": {
+          "$ref": "#/$defs/TimeWindow"
+        }
+      },
+      "required": [
+        "kind",
+        "seriesRef",
+        "timeWindow"
+      ],
+      "title": "MetricLocator",
+      "type": "object"
+    },
+    "TraceLocator": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "TRACE_SPAN",
+          "title": "Kind",
+          "type": "string"
+        },
+        "traceId": {
+          "pattern": "^[0-9a-f]{32}$",
+          "title": "Traceid",
+          "type": "string"
+        },
+        "spanId": {
+          "pattern": "^[0-9a-f]{16}$",
+          "title": "Spanid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "traceId",
+        "spanId"
+      ],
+      "title": "TraceLocator",
+      "type": "object"
+    },
+    "FindingProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "hypothesisId": {
+          "anyOf": [
+            {
+              "format": "uuid4",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Hypothesisid"
+        },
+        "claimZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Claimzh",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "SUPPORTS",
+            "REFUTES",
+            "UNDETERMINED"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "supportingEvidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceCitation"
+          },
+          "maxItems": 30,
+          "title": "Supportingevidence",
+          "type": "array"
+        },
+        "counterEvidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceCitation"
+          },
+          "maxItems": 30,
+          "title": "Counterevidence",
+          "type": "array"
+        },
+        "unresolvedQuestions": {
+          "items": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "pattern": "[\\u4e00-\\u9fff]",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Unresolvedquestions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "hypothesisId",
+        "claimZh",
+        "relation",
+        "supportingEvidence",
+        "counterEvidence",
+        "unresolvedQuestions"
+      ],
+      "title": "FindingProposal",
+      "type": "object"
+    },
+    "ResourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "environmentId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Environmentid",
+          "type": "string"
+        },
+        "serviceId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Serviceid",
+          "type": "string"
+        },
+        "role": {
+          "anyOf": [
+            {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Role"
+        },
+        "identityStatus": {
+          "enum": [
+            "UNRESOLVED",
+            "PARTIAL",
+            "VERIFIED",
+            "STALE"
+          ],
+          "title": "Identitystatus",
+          "type": "string"
+        },
+        "hostId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Hostid"
+        },
+        "instanceId": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Instanceid"
+        },
+        "containerId": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Containerid"
+        },
+        "systemdUnit": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Systemdunit"
+        },
+        "imageDigest": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Imagedigest"
+        },
+        "validFrom": {
+          "format": "date-time",
+          "title": "Validfrom",
+          "type": "string"
+        },
+        "validTo": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Validto"
+        },
+        "observedAt": {
+          "format": "date-time",
+          "title": "Observedat",
+          "type": "string"
+        },
+        "sourceSystemId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Sourcesystemid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "environmentId",
+        "serviceId",
+        "role",
+        "identityStatus",
+        "hostId",
+        "instanceId",
+        "containerId",
+        "systemdUnit",
+        "imageDigest",
+        "validFrom",
+        "validTo",
+        "observedAt",
+        "sourceSystemId"
+      ],
+      "title": "ResourceRef",
+      "type": "object"
+    },
+    "IncidentSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "incidentId": {
+          "format": "uuid4",
+          "title": "Incidentid",
+          "type": "string"
+        },
+        "displayId": {
+          "maxLength": 160,
+          "minLength": 10,
+          "pattern": "^[^-]+-[^-]+-[^-]+-[0-9]{8}-[0-9]{6,}$",
+          "title": "Displayid",
+          "type": "string"
+        },
+        "titleZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Titlezh",
+          "type": "string"
+        },
+        "environmentId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Environmentid",
+          "type": "string"
+        },
+        "anchorServiceId": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Anchorserviceid",
+          "type": "string"
+        },
+        "domainCode": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Domaincode",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "OPEN",
+            "INVESTIGATING",
+            "MONITORING",
+            "RESOLVED",
+            "CLOSED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 0,
+          "title": "Version",
+          "type": "integer"
+        },
+        "timeWindow": {
+          "$ref": "#/$defs/TimeWindow"
+        },
+        "selectedReportRef": {
+          "anyOf": [
+            {
+              "format": "uuid4",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Selectedreportref"
+        },
+        "recoveryStatus": {
+          "enum": [
+            "NOT_VERIFIED",
+            "VERIFIED",
+            "FAILED",
+            "UNKNOWN"
+          ],
+          "title": "Recoverystatus",
+          "type": "string"
+        },
+        "recoveryEvidenceIds": {
+          "items": {
+            "format": "uuid4",
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Recoveryevidenceids",
+          "type": "array"
+        },
+        "closureReasonZh": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "minLength": 1,
+              "pattern": "[\\u4e00-\\u9fff]",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Closurereasonzh"
+        }
+      },
+      "required": [
+        "incidentId",
+        "displayId",
+        "titleZh",
+        "environmentId",
+        "anchorServiceId",
+        "domainCode",
+        "status",
+        "version",
+        "timeWindow",
+        "selectedReportRef",
+        "recoveryStatus",
+        "recoveryEvidenceIds",
+        "closureReasonZh"
+      ],
+      "title": "IncidentSnapshot",
+      "type": "object"
+    },
+    "FollowUpProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "objectiveZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Objectivezh",
+          "type": "string"
+        },
+        "reasonZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Reasonzh",
+          "type": "string"
+        },
+        "relevantEvidenceIds": {
+          "items": {
+            "format": "uuid4",
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Relevantevidenceids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "objectiveZh",
+        "reasonZh",
+        "relevantEvidenceIds"
+      ],
+      "title": "FollowUpProposal",
+      "type": "object"
+    },
+    "TaskExecutionResult": {
+      "additionalProperties": false,
+      "properties": {
+        "taskId": {
+          "format": "uuid4",
+          "title": "Taskid",
+          "type": "string"
+        },
+        "runId": {
+          "format": "uuid4",
+          "title": "Runid",
+          "type": "string"
+        },
+        "attemptId": {
+          "format": "uuid4",
+          "title": "Attemptid",
+          "type": "string"
+        },
+        "executionEpoch": {
+          "minimum": 1,
+          "title": "Executionepoch",
+          "type": "integer"
+        },
+        "submittedAgainstPlanRevision": {
+          "minimum": 1,
+          "title": "Submittedagainstplanrevision",
+          "type": "integer"
+        },
+        "expectedStateVersion": {
+          "minimum": 0,
+          "title": "Expectedstateversion",
+          "type": "integer"
+        },
+        "executionStatus": {
+          "enum": [
+            "SUCCEEDED",
+            "FAILED",
+            "SKIPPED",
+            "CANCELLED",
+            "SUPERSEDED"
+          ],
+          "title": "Executionstatus",
+          "type": "string"
+        },
+        "coverage": {
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "NONE",
+            "UNKNOWN"
+          ],
+          "title": "Coverage",
+          "type": "string"
+        },
+        "conclusion": {
+          "enum": [
+            "SUPPORTED",
+            "REFUTED",
+            "INCONCLUSIVE",
+            "NOT_EVALUATED"
+          ],
+          "title": "Conclusion",
+          "type": "string"
+        },
+        "findings": {
+          "items": {
+            "$ref": "#/$defs/FindingProposal"
+          },
+          "maxItems": 30,
+          "title": "Findings",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "format": "uuid4",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "followUps": {
+          "items": {
+            "$ref": "#/$defs/FollowUpProposal"
+          },
+          "maxItems": 10,
+          "title": "Followups",
+          "type": "array"
+        },
+        "terminationReason": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Terminationreason"
+        }
+      },
+      "required": [
+        "taskId",
+        "runId",
+        "attemptId",
+        "executionEpoch",
+        "submittedAgainstPlanRevision",
+        "expectedStateVersion",
+        "executionStatus",
+        "coverage",
+        "conclusion",
+        "findings",
+        "evidenceIds",
+        "followUps",
+        "terminationReason"
+      ],
+      "title": "TaskExecutionResult",
+      "type": "object"
+    },
+    "ReviewIssueProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "issueType": {
+          "enum": [
+            "MISSING_EVIDENCE",
+            "MISSING_CAUSAL_LINK",
+            "COUNTEREVIDENCE",
+            "SCOPE_MISMATCH",
+            "OTHER"
+          ],
+          "title": "Issuetype",
+          "type": "string"
+        },
+        "claimZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Claimzh",
+          "type": "string"
+        },
+        "missingEvidenceZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Missingevidencezh",
+          "type": "string"
+        },
+        "reasonZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Reasonzh",
+          "type": "string"
+        },
+        "capabilityHints": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9-]{1,63}$",
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Capabilityhints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "issueType",
+        "claimZh",
+        "missingEvidenceZh",
+        "reasonZh",
+        "capabilityHints"
+      ],
+      "title": "ReviewIssueProposal",
+      "type": "object"
+    },
+    "ReviewResultProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "candidateReportId": {
+          "format": "uuid4",
+          "title": "Candidatereportid",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "ACCEPT_CANDIDATE",
+            "NEEDS_EVIDENCE",
+            "REJECT_CANDIDATE",
+            "INCONCLUSIVE"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/ReviewIssueProposal"
+          },
+          "maxItems": 30,
+          "title": "Issues",
+          "type": "array"
+        },
+        "checkedEvidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceCitation"
+          },
+          "maxItems": 100,
+          "title": "Checkedevidence",
+          "type": "array"
+        },
+        "summaryZh": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "pattern": "[\\u4e00-\\u9fff]",
+          "title": "Summaryzh",
+          "type": "string"
+        }
+      },
+      "required": [
+        "candidateReportId",
+        "decision",
+        "issues",
+        "checkedEvidence",
+        "summaryZh"
+      ],
+      "title": "ReviewResultProposal",
+      "type": "object"
+    },
+    "ReviewResultSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "reviewId": {
+          "format": "uuid4",
+          "title": "Reviewid",
+          "type": "string"
+        },
+        "runId": {
+          "format": "uuid4",
+          "title": "Runid",
+          "type": "string"
+        },
+        "reviewerAttemptId": {
+          "format": "uuid4",
+          "title": "Reviewerattemptid",
+          "type": "string"
+        },
+        "reviewedStateVersion": {
+          "minimum": 0,
+          "title": "Reviewedstateversion",
+          "type": "integer"
+        },
+        "candidateReportVersion": {
+          "minimum": 1,
+          "title": "Candidatereportversion",
+          "type": "integer"
+        },
+        "applicabilityRecheckedAtStateVersion": {
+          "minimum": 0,
+          "title": "Applicabilityrecheckedatstateversion",
+          "type": "integer"
+        },
+        "proposal": {
+          "$ref": "#/$defs/ReviewResultProposal"
+        }
+      },
+      "required": [
+        "reviewId",
+        "runId",
+        "reviewerAttemptId",
+        "reviewedStateVersion",
+        "candidateReportVersion",
+        "applicabilityRecheckedAtStateVersion",
+        "proposal"
+      ],
+      "title": "ReviewResultSnapshot",
+      "type": "object"
+    }
+  }
+}

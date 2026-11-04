@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-04",
+  "scope": "本轮补充后文档静态自检，不等于实现测试或独立验收",
+  "checkedFiles": [
+    "rules/01-architecture.md",
+    "docs/架构规范映射与裁决.md",
+    "docs/共同规范.md",
+    "rules/README.md"
+  ],
+  "architectureRows": 45,
+  "originalIdsMapped": 21,
+  "criteriaRows": 4,
+  "localLinksVerified": 36,
+  "localLinkScope": "仅上述四个主文件中的相对 Markdown 链接出现次数；包含重复引用，不递归统计 history 归档，不检查外网及待实现证据路径",
+  "localLinksByFile": {
+    "rules/01-architecture.md": 2,
+    "docs/架构规范映射与裁决.md": 22,
+    "docs/共同规范.md": 3,
+    "rules/README.md": 9
+  },
+  "brokenLinks": [],
+  "checks": {
+    "architectureRows45": true,
+    "uniqueIds45": true,
+    "completeIds": true,
+    "evidencePresent": true,
+    "mappedOriginal21": true,
+    "fourCriteria": true,
+    "identityUnchanged": true,
+    "positiveControl": true,
+    "unknownState": true,
+    "persistBeforeEnqueue": true,
+    "dependencyEvidence": true,
+    "mappingProhibition": true,
+    "levelTrace": true,
+    "noForbiddenWord": true,
+    "localLinksValid": true
+  },
+  "sha256": {
+    "rules/01-architecture.md": "a5b3976a7f174a835fbb9463191ca88f21d91ae137a7e7de86dec55f7224b5f4",
+    "docs/架构规范映射与裁决.md": "1a39583246c54ad3aadbffdb84cd2584a2c8d98f83ae60f7c674c1f9de29c323",
+    "docs/共同规范.md": "4f8e9f908bf35aeaa68b3270ea903acdb865026d8c2d730972162003257eefb1",
+    "rules/README.md": "6cbbf7705ad678232d1412c63bd62c3f9be13b4531e72a5241722ab25de7a816"
+  },
+  "status": "PASS",
+  "notRun": [
+    "生产代码与实现测试",
+    "架构工具四类可执行样例",
+    "依赖安装及版本锁定",
+    "通道幂等/查询能力实测",
+    "商城端到端验证",
+    "本轮补充的独立复验"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "verificationKind": "offline_design_example_validation",
+  "validator": "pydantic 2.13.4",
+  "source": "external_local_execution_not_test_platform",
+  "structureModelsValidated": 12,
+  "negativeExamples": [
+    {
+      "functionDescriptionZh": "拒绝客户端额外提交tenantId冒充可信租户。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "CreateInvestigationRequest"
+    },
+    {
+      "functionDescriptionZh": "拒绝只有空白的调查目标。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "CreateInvestigationRequest"
+    },
+    {
+      "functionDescriptionZh": "拒绝没有中文说明的调查目标。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "CreateInvestigationRequest"
+    },
+    {
+      "functionDescriptionZh": "拒绝起止时间颠倒。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "CreateInvestigationRequest"
+    },
+    {
+      "functionDescriptionZh": "拒绝排队状态携带执行阶段。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "RunSnapshot"
+    },
+    {
+      "functionDescriptionZh": "拒绝READY证据缺少采集与完整性元数据。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "EvidenceMetadata"
+    },
+    {
+      "functionDescriptionZh": "拒绝用任意URL替代类型化证据定位。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "FindingProposal"
+    },
+    {
+      "functionDescriptionZh": "拒绝没有业务恢复证据就标记事件已恢复。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "IncidentSnapshot"
+    },
+    {
+      "functionDescriptionZh": "拒绝将缩写容器ID当完整身份。",
+      "expected": "REJECT",
+      "observed": "REJECT",
+      "contractName": "ResourceRef"
+    }
+  ],
+  "allObservedAsExpected": true,
+  "businessTestsExecuted": 0,
+  "jsonSchemaStandaloneDraft202012Conformance": "NOT_EXECUTED",
+  "notesZh": "Schema由定义模型生成；独立JSONSchema验证器、Java校验与数据库不变量验收留待实施。本记录不是平台触发测试，也不是业务测试通过证明。"
+}

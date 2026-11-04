@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-04",
+  "scope": "最新补充文档静态自检；非实现测试或独立验收",
+  "files": [
+    "rules/02-coding-style.md",
+    "rules/03-interface-layer.md",
+    "docs/编码与接口规范映射与裁决.md"
+  ],
+  "checks": [
+    {
+      "name": "CODE03枚举证据且无mypy",
+      "pass": true
+    },
+    {
+      "name": "CODE04非机器门禁且无依赖工具作证据",
+      "pass": true
+    },
+    {
+      "name": "CODE06阈值15与非阻断通道",
+      "pass": true
+    },
+    {
+      "name": "金额联合证据与裁决",
+      "pass": true
+    },
+    {
+      "name": "Google配置及互斥",
+      "pass": true
+    },
+    {
+      "name": "CODE21与06待迁移",
+      "pass": true
+    },
+    {
+      "name": "固定证据布局",
+      "pass": true
+    },
+    {
+      "name": "CODE23条唯一连续",
+      "pass": true
+    },
+    {
+      "name": "API正文与适用性各20条",
+      "pass": true
+    },
+    {
+      "name": "41条六列映射",
+      "pass": true
+    },
+    {
+      "name": "03关联待迁移与MVP分栏",
+      "pass": true
+    },
+    {
+      "name": "02不制造black冲突",
+      "pass": true
+    },
+    {
+      "name": "正文裁决无禁用词",
+      "pass": true
+    },
+    {
+      "name": "迁移顺序已列06",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

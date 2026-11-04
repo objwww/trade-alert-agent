@@ -1,0 +1,112 @@
+{
+  "recordType": "external_design_asset_verification",
+  "displayId": "目标一设计核验-文档工具-运维域-20261102-000001",
+  "functionDescriptionZh": "核验目标一技术方案、领域契约、图表、样例、引用与交付文件一致，并确认原设计资产未被改写。",
+  "source": "local_authoring_environment_not_test_platform",
+  "platformExecution": false,
+  "platformCompliance": "NOT_A_PLATFORM_RUN",
+  "identity": {
+    "initiatorAccountId": null,
+    "executorAccountId": null,
+    "actor": "Codex assistant",
+    "executor": "local Python",
+    "identityStatus": "NOT_CONNECTED_TO_PLATFORM_IDENTITY"
+  },
+  "testState": "FINISHED",
+  "verdict": "PASS",
+  "taskCompleted": true,
+  "startedAt": "2026-11-01T19:04:49.674327+00:00",
+  "finishedAt": "2026-11-01T19:04:49.845740+00:00",
+  "designReviewStatus": "AWAITING_USER_REVIEW",
+  "businessImplementationStarted": false,
+  "rcaAgentState": "NOT_INVOKED",
+  "rcaStatus": "NOT_REQUIRED",
+  "faultScenario": "NOT_APPLICABLE",
+  "actualFaultTriggers": [],
+  "actualAlerts": [],
+  "actualIncidents": [],
+  "screenshots": {
+    "status": "NOT_APPLICABLE",
+    "reasonZh": "检查对象为文档与设计图；PNG为被审设计产物，不冒充业务测试截图。"
+  },
+  "checks": {
+    "mainSections": 12,
+    "boundaryMatrixRows": 28,
+    "matrixColumns": 7,
+    "scenarioDefinitions": 8,
+    "rootContractTypes": 12,
+    "positiveDefinitionExamples": 12,
+    "negativeDefinitionExamples": 9,
+    "brokenLocalLinks": 0,
+    "preservedV1Assets": 13,
+    "preservedV2Pages": 10,
+    "diagrams": [
+      {
+        "name": "01-系统全景",
+        "dimensions": [
+          1800,
+          1370
+        ],
+        "editable_source": true,
+        "all_labels_preserved": true,
+        "rendered_arrows": true,
+        "text_outside_canvas": 0
+      },
+      {
+        "name": "02-领域关系",
+        "dimensions": [
+          1800,
+          1260
+        ],
+        "editable_source": true,
+        "all_labels_preserved": true,
+        "rendered_arrows": true,
+        "text_outside_canvas": 0
+      },
+      {
+        "name": "03-并发与提交",
+        "dimensions": [
+          2000,
+          1350
+        ],
+        "editable_source": true,
+        "all_labels_preserved": true,
+        "rendered_arrows": true,
+        "text_outside_canvas": 0
+      }
+    ]
+  },
+  "notExecuted": [
+    "独立Draft2020-12验证器符合性测试",
+    "Java实现及授权验证",
+    "真实数据库并发与恢复",
+    "谷粒商城业务单元/组件/端到端测试",
+    "真实模型RCA评测"
+  ],
+  "visualReview": {
+    "method": "assistant reviewed rendered PNGs",
+    "scope": "Chinese legibility, visible directions, layer separation and unclipped text",
+    "liveDrawioEditorOpened": false
+  },
+  "artifactHashes": {
+    "README.md": "7ab80faed26c0ebbe35f153e7c50c61d8fa44e43fe8142e3a530f42b5d077a12",
+    "业务场景与调查契约.spec.md": "58c7458906e8896dd4df5d238504a7555b7b27418e74b1de06940b86b8b8c646",
+    "图/01-系统全景.drawio": "9523d536169f525a2c3eefe10fc8786f66251c207156b9f4e2f8c7aadee166b7",
+    "图/01-系统全景.png": "b0091cd287ec8c9afde74aef43c4d6bfeb1f15c3b649180517aea210cb58c6b4",
+    "图/01-系统全景.svg": "93d0a3f56f57d7e055854664d2f247bf2d10e10cc2e374c8236724cec061a3a3",
+    "图/02-领域关系.drawio": "89d785df0d6c2ab60438a88962dcf2c9e28091359143c9674d53d54479a0e256",
+    "图/02-领域关系.png": "410fe15c26e499f4c3fb6945c24dcb512180d13b2d09675fd615df1de0a2ea23",
+    "图/02-领域关系.svg": "27c143e0591a4a618ca2ba871b43fac0b495e7515646c06d315417c61b71b886",
+    "图/03-并发与提交.drawio": "c453781282a02fea7cc1e6d88772fe848187b7e7287329d574e30caa69176b6b",
+    "图/03-并发与提交.png": "ade5523fb53dd3b4cbc8ae72a2870e5895a878a6ddaea68875636cedff516556",
+    "图/03-并发与提交.svg": "e3db48f7917b2db4f30d36764ba122cc9b9247145c24527ce1c982d61cc2401f",
+    "技术方案.md": "368de78a67a617dbf439a4fc944e1c66ce2d2fac60740f2aec7ee11e163df4e3",
+    "技术选型与取舍.md": "46db3a7ec8f00ebb0fea1476912fee363c383914a6749ec5ec106a5a71752b5d",
+    "附件/图表核验.json": "584132fdeacccdfe3a255153f7195b7dd3dc40892023193e8c984b054e29f9c8",
+    "附件/场景目录.json": "974198b0c7f7cc5e83ca364aef1627ad259cee9652272a708170b0a27a55e4f0",
+    "附件/契约示例.json": "8563215ca2cd5f7231f57718656e8d9e72b92b8f26082f7940ff9080dfc4e693",
+    "附件/契约示例核验.json": "252110791df200bbeffe7d6745792e473954574cdcc10e3078b16a51c9782aec",
+    "附件/调查契约.schema.json": "1014e9974dae8e0405311511e21850168b2c2afff43377f24666f4644d03fee7",
+    "附件/资料核对记录.json": "5e54e65ebb3d8c424efcf86da0332747b75a789ee09b3c27830784abf2e594f7"
+  }
+}

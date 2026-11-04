@@ -1,0 +1,45 @@
+{
+  "review_date": "2026-11-02",
+  "scope": "static_document_and_contract_research",
+  "repos": [
+    {
+      "repo": "shuhongfan/GuliMall",
+      "commit": "21bd319341feb8459e159a72eff050567bf29ccf",
+      "inspected": [
+        "README.md",
+        "repository tree",
+        "prior 29-file assessment"
+      ],
+      "diagram_asset": "Guli Mall(包含代码、课件、sql)/分布式基础/谷粒商城-微服务架构图.jpg",
+      "diagram_visual_preview": "browser_timed_out_not_pixel_reviewed"
+    },
+    {
+      "repo": "alibaba/spring-ai-alibaba",
+      "commit": "17e26ff6fe951d605771c1845229ca3edb043634",
+      "license": "Apache-2.0",
+      "inspected": [
+        "README.md",
+        "LICENSE"
+      ]
+    },
+    {
+      "repo": "temporalio/sdk-java",
+      "commit": "de77db89c65e164b14633744479cd25dc42f0d07",
+      "license": "Apache-2.0",
+      "inspected": [
+        "README.md",
+        "LICENSE"
+      ]
+    }
+  ],
+  "official_sources": [
+    "https://www.postgresql.org/docs/17/sql-select.html",
+    "https://json-schema.org/draft/2020-12",
+    "https://spec.openapis.org/oas/v3.1.1.html",
+    "https://docs.temporal.io/activity-definition"
+  ],
+  "implementation_copied": false,
+  "runtime_integration_validated": false,
+  "architecture_generator": "native SVG and draw.io; MuPDF PNG rendering",
+  "archify_used_for_generation": false
+}

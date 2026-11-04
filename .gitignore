@@ -1,0 +1,20 @@
+# 一次性验证产物；验收前仍须清理并扫描
+scratch/
+
+# 仅本地：服务器拓扑、凭证、口令等共识文件，禁止入库 / 禁止上 GitHub
+.local/
+
+# 工具运行时与缓存
+.ekko-tmp/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+
+# 历史留档与第三方源码，体积大且含 node_modules
+var/
+
+# 本地环境与密钥
+.env
+.env.*
+*.pem
+*.key

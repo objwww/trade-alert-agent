@@ -1,0 +1,29 @@
+[
+  {
+    "name": "01-系统全景",
+    "width": 1800,
+    "height": 1370,
+    "nodes": 20,
+    "relationships": 13,
+    "textOutsideCanvas": [],
+    "renderer": "native SVG / MuPDF; no archify"
+  },
+  {
+    "name": "02-领域关系",
+    "width": 1800,
+    "height": 1260,
+    "nodes": 13,
+    "relationships": 12,
+    "textOutsideCanvas": [],
+    "renderer": "native SVG / MuPDF; no archify"
+  },
+  {
+    "name": "03-并发与提交",
+    "width": 2000,
+    "height": 1350,
+    "nodes": 9,
+    "relationships": 22,
+    "textOutsideCanvas": [],
+    "renderer": "native SVG / MuPDF; no archify"
+  }
+]

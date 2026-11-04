@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-04",
+  "scope": "本轮重新执行的文档静态自检；非独立验收或实现测试。归档仅核对ID完整，不声称本轮能还原并证明迁移前逐字一致。",
+  "checks": [
+    {
+      "name": "DOMAIN编号连续唯一",
+      "pass": true
+    },
+    {
+      "name": "DOMAIN证据非空且无模糊词",
+      "pass": true
+    },
+    {
+      "name": "DOMAIN归档原ID齐全",
+      "pass": true
+    },
+    {
+      "name": "DOMAIN正文无Java专属残留",
+      "pass": true
+    },
+    {
+      "name": "INFRA编号连续唯一",
+      "pass": true
+    },
+    {
+      "name": "INFRA证据非空且无模糊词",
+      "pass": true
+    },
+    {
+      "name": "INFRA归档原ID齐全",
+      "pass": true
+    },
+    {
+      "name": "INFRA正文无Java专属残留",
+      "pass": true
+    },
+    {
+      "name": "44条六列映射含级别变化",
+      "pass": true
+    },
+    {
+      "name": "44条适用性登记齐全",
+      "pass": true
+    },
+    {
+      "name": "当前不适用三件套",
+      "pass": true
+    },
+    {
+      "name": "INFRA-22仍适用",
+      "pass": true
+    },
+    {
+      "name": "具体禁入清单",
+      "pass": true
+    },
+    {
+      "name": "纯单元不装配app",
+      "pass": true
+    },
+    {
+      "name": "四恢复用例归属齐全",
+      "pass": true
+    },
+    {
+      "name": "全文禁用词为零",
+      "pass": true
+    },
+    {
+      "name": "MVP全量登记",
+      "pass": true
+    },
+    {
+      "name": "本地链接有效",
+      "pass": true
+    },
+    {
+      "name": "03引用状态同步",
+      "pass": true
+    },
+    {
+      "name": "06仍待迁移且开发门保持",
+      "pass": true
+    }
+  ],
+  "passed": 20,
+  "total": 20,
+  "localLinkOccurrences": 173,
+  "brokenLinks": [],
+  "notRun": [
+    "项目四入口",
+    "数据库组件验证",
+    "商城端到端",
+    "四个恢复用例",
+    "外部来源/工具新增探针"
+  ],
+  "developmentAuthorized": false
+}

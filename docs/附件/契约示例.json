@@ -1,0 +1,311 @@
+{
+  "version": "0.1",
+  "source": "synthetic_design_examples",
+  "notesZh": "这些是独立协议片段，并非同一次真实调查的执行历史。Task片段不意味着示例排队Run已经生成计划；示意账号未认证。",
+  "examples": [
+    {
+      "functionDescriptionZh": "核对CreateInvestigationRequest的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "CreateInvestigationRequest",
+        "payload": {
+          "objectiveZh": "定位本次下单失败影响的订单实例，并给出有证据支持的原因与安全建议。",
+          "requestedScope": {
+            "environmentId": "isolated-lab",
+            "serviceIds": [
+              "gulimall-order"
+            ],
+            "timeWindow": {
+              "start": "2026-11-02T06:00:00Z",
+              "end": "2026-11-02T06:15:00Z"
+            }
+          },
+          "investigationProfileId": "readonly-order-baseline",
+          "expectedIncidentVersion": 0
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对CancelInvestigationRequest的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "CancelInvestigationRequest",
+        "payload": {
+          "expectedStateVersion": 2,
+          "reasonZh": "用户请求停止本次调查，保留已有材料及未知工具调用。"
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对SelectIncidentReportRequest的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "SelectIncidentReportRequest",
+        "payload": {
+          "reportId": "00000000-0000-4000-8000-000000000009",
+          "expectedIncidentVersion": 3,
+          "reasonZh": "人工复核后选择该报告，其他调查结果保留。"
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对RunSnapshot的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "RunSnapshot",
+        "payload": {
+          "runId": "00000000-0000-4000-8000-000000000001",
+          "displayId": "下单失败调查-订单服务-交易域-20261102-000001",
+          "incidentId": "00000000-0000-4000-8000-000000000002",
+          "status": "QUEUED",
+          "phase": "NONE",
+          "outcome": "NOT_EVALUATED",
+          "stateVersion": 0,
+          "currentPlanRevision": 0,
+          "executionEpoch": 0,
+          "scope": {
+            "environmentId": "isolated-lab",
+            "serviceIds": [
+              "gulimall-order"
+            ],
+            "timeWindow": {
+              "start": "2026-11-02T06:00:00Z",
+              "end": "2026-11-02T06:15:00Z"
+            }
+          },
+          "configurationVersion": "design-0.1",
+          "initiatorAccountId": "00000000-0000-4000-8000-000000000003",
+          "executorAccountId": null,
+          "startedAt": null,
+          "finishedAt": null,
+          "terminationReason": null,
+          "hasUnresolvedExternalCalls": false
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对TaskContract的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "TaskContract",
+        "payload": {
+          "taskId": "00000000-0000-4000-8000-000000000004",
+          "runId": "00000000-0000-4000-8000-000000000001",
+          "parentTaskId": null,
+          "createdPlanRevision": 1,
+          "scopeVersion": 1,
+          "objectiveZh": "核验订单实例可用性与下单失败的时间及资源关联。",
+          "requiredEvidenceZh": [
+            "实际失败请求",
+            "完整实例身份及主机映射",
+            "实例与请求异常的时间范围"
+          ],
+          "allowedToolCapabilities": [
+            "metrics.query",
+            "logs.search",
+            "topology.resolve"
+          ],
+          "deadline": "2026-11-02T06:20:00Z",
+          "dependencies": []
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对EvidenceMetadata的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "EvidenceMetadata",
+        "payload": {
+          "evidenceId": "00000000-0000-4000-8000-000000000005",
+          "runId": "00000000-0000-4000-8000-000000000001",
+          "status": "PENDING",
+          "completeness": "UNKNOWN",
+          "sourceType": "LOGS",
+          "sourceSystemId": "configured-log-source",
+          "serviceId": "gulimall-order",
+          "timeWindow": {
+            "start": "2026-11-02T06:00:00Z",
+            "end": "2026-11-02T06:15:00Z"
+          },
+          "capturedAt": null,
+          "contentSha256": null,
+          "contentSize": null
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对FindingProposal的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "FindingProposal",
+        "payload": {
+          "hypothesisId": "00000000-0000-4000-8000-000000000006",
+          "claimZh": "当前尚无足够证据确认具体实例异常原因。",
+          "relation": "UNDETERMINED",
+          "supportingEvidence": [],
+          "counterEvidence": [],
+          "unresolvedQuestions": [
+            "需核验故障窗口内的实例身份、可用性与实际失败请求。"
+          ]
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对ResourceRef的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "ResourceRef",
+        "payload": {
+          "environmentId": "isolated-lab",
+          "serviceId": "gulimall-order",
+          "role": "order-api",
+          "identityStatus": "UNRESOLVED",
+          "hostId": null,
+          "instanceId": null,
+          "containerId": null,
+          "systemdUnit": null,
+          "imageDigest": null,
+          "validFrom": "2026-11-02T06:00:00Z",
+          "validTo": null,
+          "observedAt": "2026-11-02T06:15:00Z",
+          "sourceSystemId": "configured-resource-source"
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对IncidentSnapshot的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "IncidentSnapshot",
+        "payload": {
+          "incidentId": "00000000-0000-4000-8000-000000000002",
+          "displayId": "订单提交失败-订单服务-交易域-20261102-000001",
+          "titleZh": "事故窗口内订单提交失败率升高，原因待调查。",
+          "environmentId": "isolated-lab",
+          "anchorServiceId": "gulimall-order",
+          "domainCode": "trading-domain",
+          "status": "OPEN",
+          "version": 0,
+          "timeWindow": {
+            "start": "2026-11-02T06:00:00Z",
+            "end": "2026-11-02T06:15:00Z"
+          },
+          "selectedReportRef": null,
+          "recoveryStatus": "NOT_VERIFIED",
+          "recoveryEvidenceIds": [],
+          "closureReasonZh": null
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对TaskExecutionResult的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "TaskExecutionResult",
+        "payload": {
+          "taskId": "00000000-0000-4000-8000-000000000004",
+          "runId": "00000000-0000-4000-8000-000000000001",
+          "attemptId": "00000000-0000-4000-8000-000000000010",
+          "executionEpoch": 1,
+          "submittedAgainstPlanRevision": 1,
+          "expectedStateVersion": 2,
+          "executionStatus": "FAILED",
+          "coverage": "NONE",
+          "conclusion": "NOT_EVALUATED",
+          "findings": [],
+          "evidenceIds": [],
+          "followUps": [
+            {
+              "objectiveZh": "补采集实例身份与失败请求。",
+              "reasonZh": "当前协议示例未提供原始观测材料。",
+              "relevantEvidenceIds": []
+            }
+          ],
+          "terminationReason": "DEPENDENCY_UNAVAILABLE"
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对ReviewResultProposal的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "ReviewResultProposal",
+        "payload": {
+          "candidateReportId": "00000000-0000-4000-8000-000000000009",
+          "decision": "INCONCLUSIVE",
+          "issues": [
+            {
+              "issueType": "MISSING_EVIDENCE",
+              "claimZh": "具体实例异常原因尚待核验。",
+              "missingEvidenceZh": "实际请求、资源身份及健康证据。",
+              "reasonZh": "仅凭异常描述无法支持具体根因。",
+              "capabilityHints": [
+                "metrics-query",
+                "topology-resolve"
+              ]
+            }
+          ],
+          "checkedEvidence": [],
+          "summaryZh": "这是无原始证据条件下的协议示例，不接受具体根因。"
+        }
+      }
+    },
+    {
+      "functionDescriptionZh": "核对ReviewResultSnapshot的结构化契约示例。",
+      "isSynthetic": true,
+      "realExecutionPerformed": false,
+      "expected": "STRUCTURE_VALID_SEMANTICS_REQUIRE_TRUSTED_RUNTIME",
+      "contractDocument": {
+        "contractName": "ReviewResultSnapshot",
+        "payload": {
+          "reviewId": "00000000-0000-4000-8000-000000000011",
+          "runId": "00000000-0000-4000-8000-000000000001",
+          "reviewerAttemptId": "00000000-0000-4000-8000-000000000012",
+          "reviewedStateVersion": 2,
+          "candidateReportVersion": 1,
+          "applicabilityRecheckedAtStateVersion": 2,
+          "proposal": {
+            "candidateReportId": "00000000-0000-4000-8000-000000000009",
+            "decision": "INCONCLUSIVE",
+            "issues": [
+              {
+                "issueType": "MISSING_EVIDENCE",
+                "claimZh": "具体实例异常原因尚待核验。",
+                "missingEvidenceZh": "实际请求、资源身份及健康证据。",
+                "reasonZh": "仅凭异常描述无法支持具体根因。",
+                "capabilityHints": [
+                  "metrics-query",
+                  "topology-resolve"
+                ]
+              }
+            ],
+            "checkedEvidence": [],
+            "summaryZh": "这是无原始证据条件下的协议示例，不接受具体根因。"
+          }
+        }
+      }
+    }
+  ]
+}

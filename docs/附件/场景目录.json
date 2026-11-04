@@ -1,0 +1,333 @@
+{
+  "version": "0.1",
+  "isSynthetic": true,
+  "realExecutionPerformed": false,
+  "truthIsolationStatus": "REQUIRES_IMPLEMENTATION_NOT_ENFORCED_BY_THIS_FILE",
+  "businessFailureDefinitions": 6,
+  "boundaryDefinitions": 2,
+  "definitions": [
+    {
+      "displayId": "订单实例退出导致下单失败-订单服务-交易域-20261102-000001",
+      "titleZh": "订单实例退出导致下单失败",
+      "version": "0.1",
+      "serviceId": "gulimall-order",
+      "domainZh": "交易域",
+      "kind": "BUSINESS_FAILURE",
+      "priority": "FIRST_CLOSED_LOOP",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "下单请求失败率上升",
+        "订单实例健康异常"
+      ],
+      "requiredEvidenceZh": [
+        "请求失败事实",
+        "主机与完整容器身份",
+        "实例健康与事故窗口"
+      ],
+      "preconditionsZh": [
+        "基线下单请求正常",
+        "目标身份已登记",
+        "独立恢复方案已准备"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "库存调用延迟导致订单提交超时-库存服务-库存域-20261102-000001",
+      "titleZh": "库存调用延迟导致订单提交超时",
+      "version": "0.1",
+      "serviceId": "gulimall-ware",
+      "domainZh": "库存域",
+      "kind": "BUSINESS_FAILURE",
+      "priority": "FOLLOWUP",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "订单等待库存调用",
+        "库存依赖耗时升高"
+      ],
+      "requiredEvidenceZh": [
+        "依赖Span",
+        "库存服务基线及日志",
+        "上下游时间窗口"
+      ],
+      "preconditionsZh": [
+        "调用链就绪",
+        "受控延迟能力与恢复就绪"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "订单消息消费异常导致订单状态延迟-订单服务-交易域-20261102-000001",
+      "titleZh": "订单消息消费异常导致订单状态延迟",
+      "version": "0.1",
+      "serviceId": "gulimall-order",
+      "domainZh": "交易域",
+      "kind": "BUSINESS_FAILURE",
+      "priority": "FOLLOWUP",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "订单更新延迟",
+        "消费积压或错误"
+      ],
+      "requiredEvidenceZh": [
+        "消费指标",
+        "消费者实际错误",
+        "消息及订单关联"
+      ],
+      "preconditionsZh": [
+        "消息链路和消费角色已核实",
+        "无真实支付副作用"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "数据库锁等待导致订单处理阻塞-订单服务-交易域-20261102-000001",
+      "titleZh": "数据库锁等待导致订单处理阻塞",
+      "version": "0.1",
+      "serviceId": "gulimall-order",
+      "domainZh": "交易域",
+      "kind": "BUSINESS_FAILURE",
+      "priority": "CONDITIONAL",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "订单请求长时间等待"
+      ],
+      "requiredEvidenceZh": [
+        "等待链",
+        "事务与请求关联",
+        "连接池与数据库对照"
+      ],
+      "preconditionsZh": [
+        "受控事务数据",
+        "数据库只读诊断权限"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "错误配置发布后订单处理退化-订单服务-交易域-20261102-000001",
+      "titleZh": "错误配置发布后订单处理退化",
+      "version": "0.1",
+      "serviceId": "gulimall-order",
+      "domainZh": "交易域",
+      "kind": "BUSINESS_FAILURE",
+      "priority": "CONDITIONAL",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "变更窗口内业务错误上升"
+      ],
+      "requiredEvidenceZh": [
+        "实际生效配置差异",
+        "异常字段关联",
+        "替代解释与反证"
+      ],
+      "preconditionsZh": [
+        "可核验发布记录",
+        "受控回退方式"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "支付回调结果未知导致订单待核对-订单服务-交易域-20261102-000001",
+      "titleZh": "支付回调结果未知导致订单待核对",
+      "version": "0.1",
+      "serviceId": "gulimall-order",
+      "domainZh": "交易域",
+      "kind": "BUSINESS_FAILURE",
+      "priority": "CONDITIONAL",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "支付与订单状态暂不一致"
+      ],
+      "requiredEvidenceZh": [
+        "支付查询结果",
+        "回调及订单状态",
+        "结果未知边界"
+      ],
+      "preconditionsZh": [
+        "隔离模拟或沙箱",
+        "禁止重复扣款"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "观测数据缺失导致调查证据不足-诊断服务-运维域-20261102-000001",
+      "titleZh": "观测数据缺失导致调查证据不足",
+      "version": "0.1",
+      "serviceId": "rca-platform",
+      "domainZh": "运维域",
+      "kind": "OBSERVABILITY_BOUNDARY",
+      "priority": "FOLLOWUP",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "数据源失败、空结果或过期"
+      ],
+      "requiredEvidenceZh": [
+        "查询状态",
+        "来源新鲜度",
+        "明确证据缺口"
+      ],
+      "preconditionsZh": [
+        "正常与失联采集可区分"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    },
+    {
+      "displayId": "实例重建导致历史与当前目标不一致-资源解析服务-运维域-20261102-000001",
+      "titleZh": "实例重建导致历史与当前目标不一致",
+      "version": "0.1",
+      "serviceId": "resource-resolver",
+      "domainZh": "运维域",
+      "kind": "RESOURCE_SAFETY",
+      "priority": "FOLLOWUP",
+      "readiness": "DEFINED_NOT_READY",
+      "source": "synthetic_design_definition",
+      "realExecutionPerformed": false,
+      "executionStatus": "NOT_RUN",
+      "observedSymptomsZh": [
+        "同名实例身份不一致"
+      ],
+      "requiredEvidenceZh": [
+        "历史及当前完整身份",
+        "关系有效期",
+        "目标变化阻断"
+      ],
+      "preconditionsZh": [
+        "可查询历史映射",
+        "不执行生产操作"
+      ],
+      "parametersToBindBeforeExecution": [
+        "授权窗口",
+        "有效业务基线",
+        "实际流量前提",
+        "观察期限",
+        "证据与恢复预算"
+      ],
+      "allowedUncertainOutcome": "INCONCLUSIVE_WITH_EXPLICIT_GAPS",
+      "forbiddenActionsZh": [
+        "无授权执行重启或回滚",
+        "从缺数据推出业务正常",
+        "自动扩大到整机",
+        "因支付未知重复扣款"
+      ],
+      "agentInputPolicyZh": "仅投影实际观测症状与授权事实；不传场景名称、注入操作、预期根因或评判标签。"
+    }
+  ]
+}

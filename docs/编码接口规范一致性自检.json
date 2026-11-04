@@ -1,0 +1,442 @@
+{
+  "scope": "文档静态自检；非独立验收、非项目实现测试",
+  "checks": [
+    {
+      "name": "CODE正文编号唯一连续",
+      "pass": true
+    },
+    {
+      "name": "CODE四列且证据非空",
+      "pass": true
+    },
+    {
+      "name": "API正文编号唯一连续",
+      "pass": true
+    },
+    {
+      "name": "API四列且证据非空",
+      "pass": true
+    },
+    {
+      "name": "41条原文六列映射",
+      "pass": true
+    },
+    {
+      "name": "API20行适用性且独立MVP列",
+      "pass": true
+    },
+    {
+      "name": "正文映射无禁用术语",
+      "pass": true
+    },
+    {
+      "name": "02不制造black双轨问题",
+      "pass": true
+    },
+    {
+      "name": "无src/tests骨架",
+      "pass": true
+    },
+    {
+      "name": "无ID验收并入CODE21",
+      "pass": true
+    },
+    {
+      "name": "旧关联明确待迁移",
+      "pass": true
+    },
+    {
+      "name": "DAILY25及固定证据目录",
+      "pass": true
+    },
+    {
+      "name": "复杂度与Google互斥明确",
+      "pass": true
+    },
+    {
+      "name": "例外写入决策",
+      "pass": true
+    },
+    {
+      "name": "本地链接有效",
+      "pass": true
+    },
+    {
+      "name": "02-coding-style原文条目归档齐全",
+      "pass": true
+    },
+    {
+      "name": "03-interface-layer原文条目归档齐全",
+      "pass": true
+    }
+  ],
+  "localLinks": [
+    {
+      "source": "rules/02-coding-style.md",
+      "target": "01-architecture.md",
+      "exists": true
+    },
+    {
+      "source": "rules/02-coding-style.md",
+      "target": "03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "rules/02-coding-style.md",
+      "target": "../docs/history/2026-11-04-02-coding-style-before.md",
+      "exists": true
+    },
+    {
+      "source": "rules/02-coding-style.md",
+      "target": "../docs/编码与接口规范映射与裁决.md",
+      "exists": true
+    },
+    {
+      "source": "rules/02-coding-style.md",
+      "target": "../docs/国内大厂代码规范调研.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "01-architecture.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "../docs/history/2026-11-04-03-interface-layer-before.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "../docs/编码与接口规范映射与裁决.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "01-architecture.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "04-domain-layer.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "05-infrastructure-layer.md",
+      "exists": true
+    },
+    {
+      "source": "rules/03-interface-layer.md",
+      "target": "06-daily-work.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "history/2026-11-04-02-coding-style-before.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "history/2026-11-04-03-interface-layer-before.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/编码与接口规范映射与裁决.md",
+      "target": "编码接口工具核验.json",
+      "exists": true
+    },
+    {
+      "source": "docs/共同规范.md",
+      "target": "../rules/01-architecture.md",
+      "exists": true
+    },
+    {
+      "source": "docs/共同规范.md",
+      "target": "架构规范映射与裁决.md",
+      "exists": true
+    },
+    {
+      "source": "docs/共同规范.md",
+      "target": "../rules/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/共同规范.md",
+      "target": "../rules/02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "docs/共同规范.md",
+      "target": "../rules/03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "docs/共同规范.md",
+      "target": "编码与接口规范映射与裁决.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "01-architecture.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "../docs/共同规范.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "../docs/history/2026-11-04-rules-readme-before.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "01-architecture.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "02-coding-style.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "03-interface-layer.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "04-domain-layer.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "05-infrastructure-layer.md",
+      "exists": true
+    },
+    {
+      "source": "rules/README.md",
+      "target": "06-daily-work.md",
+      "exists": true
+    }
+  ],
+  "passed": 17,
+  "total": 17,
+  "files": {
+    "rules/02-coding-style.md": "5114bf5714616905d86cba14d7062d79037f05c541104c7a23c737f6a019cfea",
+    "rules/03-interface-layer.md": "1d34d290ce7f06b2e9a3244126bd660d0a702881093f9cc5aa88bb2cacf0008d",
+    "docs/编码与接口规范映射与裁决.md": "87397e9c8523dc3e2386d245601b8de389d387f8dc957a383678d2ab8e6c2086"
+  }
+}
